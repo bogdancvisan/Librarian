@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.Text?>
+<?import vcb.librarianfx.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="gp1" alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" fx:controller="vcb.librarianfx.FXMLController">
+    <padding>
+        <Insets bottom="25" left="25" right="25" top="25" />    
+    </padding>
+    
+   <children>
+       
+       <HBox alignment="CENTER" spacing="10">
+         <children>
+            <Label text="User*: " />
+         </children>
+       </HBox>
+       <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <children>
+            <Label text="Pass*:" />
+         </children>
+       </HBox>    
+       <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <children>
+            <Label text="Email*:" />
+         </children>     
+       </HBox>
+      <HBox alignment="CENTER" GridPane.rowIndex="3">
+         <children>
+            <Label text="Address:" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" GridPane.rowIndex="4">
+         <children>
+            <Label text="City:" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1">
+         <children>
+            <TextField fx:id="userAddLib" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <PasswordField fx:id="passAddLib" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="emailAddLib" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <TextField fx:id="addressAddLib" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <TextField fx:id="cityAddLib" />
+         </children>
+      </HBox>
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <TextField fx:id="contactAddLib" />
+         </children>
+      </HBox>      
+      <HBox GridPane.rowIndex="6">
+         <children>
+            <Button fx:id="buttonAddLib1" mnemonicParsing="false" onAction="#handleAddLibrarian" text="Add Librarian" />            
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <children>
+            <Button fx:id="buttonBackAddLib" contentDisplay="RIGHT" mnemonicParsing="false" text="Back" onAction="#handleAddLibrarian"  />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" GridPane.rowIndex="5">
+         <children>
+            <Label text="Contact:" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+         <children>
+            <Label fx:id="messageLabelAddLib" />
+         </children>
+      </HBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>     
+</GridPane>
