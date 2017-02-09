@@ -38,7 +38,8 @@ public class MainApp
 
     public static void main(String[] args)
     {
-
+        System.out.println("New git test!");
+        
         //JDBCLibrary newJdbc = new JDBCLibrary();
         //newJdbc.getConnection();
        // System.out.println(newJdbc.getAdminPass() + " " + newJdbc.getAdminUser());
