@@ -42,19 +42,13 @@ public class FXMLController
     {
         if (event.getSource() == buttonLibrarian) {
             System.out.println("Continuing as Librarian...");
-            stage = (Stage) buttonLibrarian.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLLibrarian.fxml"));
-            stage.setTitle("Librarian Login");
+            getFrame(buttonLibrarian, "FXMLLibrarian.fxml", "Librarian Login");
         }
         if (event.getSource() == backBtn) {
             System.out.println("Going back...");
-            stage = (Stage) backBtn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLLoginSelection.fxml"));
-            stage.setTitle("Library Management System");
+            getFrame(backBtn, "FXMLLoginSelection.fxml", "Library Management System");
         }
-        scene = new Scene(root, 500, 300);
-        stage.setScene(scene);
-        stage.show();
+        getScene();
     }
 
     @FXML
@@ -62,19 +56,13 @@ public class FXMLController
     {
         if (event.getSource() == buttonAdmin) {
             System.out.println("Continuing as Admin...");
-            stage = (Stage) buttonAdmin.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLAdmin.fxml"));
-            stage.setTitle("Admin Login");
+            getFrame(buttonAdmin, "FXMLAdmin.fxml", "Admin Login");
         }
         if (event.getSource() == backBtn) {
             System.out.println("Going back...");
-            stage = (Stage) backBtn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLLoginSelection.fxml"));
-            stage.setTitle("Library Management System");
+            getFrame(backBtn, "FXMLLoginSelection.fxml", "Library Management System");
         }
-        scene = new Scene(root, 500, 300);
-        stage.setScene(scene);
-        stage.show();
+        getScene();
     }
 
     @FXML
@@ -97,12 +85,8 @@ public class FXMLController
         }
         else if (user.equals(jdbc.getAdminUser()) && pass.equals(jdbc.getAdminPass())) {
             System.out.println("Continue to admin options...");
-            stage = (Stage) loginBtn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLAdminOptions.fxml"));
-            stage.setTitle("Admin Options");
-            scene = new Scene(root, 500, 300);
-            stage.setScene(scene);
-            stage.show();
+            getFrame(loginBtn, "FXMLAdminOptions.fxml", "Admin Options");
+            getScene();
         }
         else {
             nologin.setText("User/password missing/incorect!");
@@ -117,22 +101,13 @@ public class FXMLController
     {
         if (event.getSource() == buttonExitAO) {
             System.out.println("Exiting to Login Selection...");
-            stage = (Stage) buttonExitAO.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLLoginSelection.fxml"));
-            stage.setTitle("Library Management System");
-            scene = new Scene(root, 500, 300);
-            stage.setScene(scene);
-            stage.show();
+            getFrame(buttonExitAO, "FXMLLoginSelection.fxml", "Library Management System");
         }
         if (event.getSource() == buttonAddLib) {
             System.out.println("Continuing to add librarian...");
-            stage = (Stage) buttonAddLib.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLAddLibrarian.fxml"));
-            stage.setTitle("Add Librarian");
-            scene = new Scene(root, 500, 300);
-            stage.setScene(scene);
-            stage.show();
+            getFrame(buttonAddLib, "FXMLAddLibrarian.fxml", "Add Librarian");
         }
+        getScene();
     }
 
     @FXML
@@ -159,25 +134,35 @@ public class FXMLController
         }
         jdbc.closeConnection();
         if (event.getSource() == buttonBackAddLib) {
-            stage = (Stage) buttonBackAddLib.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("FXMLAdminOptions.fxml"));
-            stage.setTitle("Add Librarian");
-            scene = new Scene(root, 500, 300);
-            stage.setScene(scene);
-            stage.show();
+            getFrame(buttonBackAddLib, "FXMLAdminOptions.fxml", "Add Librarian");
+            getScene();
         }
+    }
+
+    private void getScene()
+    {
+        scene = new Scene(root, 500, 300);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void getFrame(Button button, String resource, String title) throws IOException
+    {
+        stage = (Stage) button.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource(resource));
+        stage.setTitle(title);
     }
 
     @FXML
     private void handleDeleteLibrarian(ActionEvent event) throws IOException
     {
-        
+
     }
 
     @FXML
     private void handleViewLibrarians(ActionEvent event) throws IOException
     {
-        
+
     }
 
     @Override
